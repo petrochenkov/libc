@@ -366,7 +366,8 @@ cfg_if! {
         // to "pthread" needs to be added.
         #[link(name = "pthread")]
         extern {}
-    } else if #[cfg(target_env = "illumos")] {
+    } else if #[cfg(target_os = "illumos")] {
+        #[link(name = "gcc_s")]
         #[link(name = "c")]
         #[link(name = "m")]
         extern {}
